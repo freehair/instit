@@ -9,7 +9,7 @@
               <th>Ville</th>
           </tr>
           <tr ng-repeat="ecole in $ctrl.listEcoles" ng-click="$ctrl.consult(ecole)">
-              <td>{{ecole.code}}</td>
+              <td>{{ecole._id}}</td>
               <td>{{ecole.name}}</td>
               <td>{{ecole.numero}} {{ecole.complement}} {{ecole.adresse}}</td>
               <td>{{ecole.codePostal}}</td>

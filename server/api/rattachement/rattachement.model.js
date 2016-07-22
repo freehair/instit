@@ -7,8 +7,8 @@ import Instit from '../instit/instit.model';
 
 var RattachementSchema = new mongoose.Schema({
     id:Number,
-    ecole:{ type: String, field:'code', ref: 'Ecole' , index: true},
-    instit:{ type:Number, field:'id', ref: 'Instit' , index: true}
+    ecole:{ type: String, ref: 'Ecole'},
+    instit:{ type:Number, ref: 'Instit'}
 });
 
 RattachementSchema.plugin(mongoosePaginate);

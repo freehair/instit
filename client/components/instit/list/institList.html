@@ -8,7 +8,7 @@
               <th>Date</th>
           </tr>
           <tr ng-repeat="instit in $ctrl.listInstits" ng-click="$ctrl.consult(instit)">
-              <td>{{instit.id}}</td>
+              <td>{{instit._id}}</td>
               <td>{{instit.firstName}}</td>
               <td>{{instit.lastName}}</td>
               <td>{{$ctrl.formatDate(instit.birthDate)}}</td>

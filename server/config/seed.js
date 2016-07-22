@@ -66,25 +66,25 @@ User.find({}).remove()
 Instit.find({}).remove()
 .then(() => {
     Instit.create({
-        id: 1,
+        _id: 1,
         firstName: 'FirstName 1',
         lastName: 'LastName 1',
         //birthDate: new Date('12/04/75','MM/DD/YY')
         birthDate: new Date(moment('12/04/75',"DD/MM/YY"))
     }, {
-        id: 2,
+        _id: 2,
         firstName: 'FirstName 2',
         lastName: 'LastName 2',
         //birthDate: new Date('01/02/81','MM/DD/YY')
         birthDate: new Date(moment('01/02/81',"DD/MM/YY"))
     },{
-        id: 3,
+        _id: 3,
         firstName: 'FirstName 3',
         lastName: 'LastName 3',
         //birthDate: new Date('24/09/62','MM/DD/YY')
         birthDate: new Date(moment('24/09/62',"DD/MM/YY"))
     },{
-        id: 4,
+        _id: 4,
         firstName: 'FirstName 4',
         lastName: 'LastName 4',
         //birthDate: new Date('12/11/88','MM/DD/YY')
@@ -99,8 +99,7 @@ Instit.find({}).remove()
 Ecole.find({}).remove()
 .then(() => {
     Ecole.create({
-        id:1,
-        code:'0790353E',
+        _id:'0790353E',
         name: 'Ecole élémentaire publique',
         numero: null,
         complement: null,
@@ -110,8 +109,7 @@ Ecole.find({}).remove()
         longitude: -0.5864199999999755,
         latitude: 46.274812
     },{
-        id:2,
-        code:'0790551V',
+        _id:'0790551V',
         name: 'Elémentaire Ferdinand-Buisson',
         numero: 12,
         complement: null,
@@ -121,8 +119,7 @@ Ecole.find({}).remove()
         longitude:  -0.211499,
         latitude: 46.976762
     },{
-        id:3,
-        code:'0790548S',
+        _id:'0790548S',
         name: 'Groupe scolaire Paul-Bert',
         numero: 6,
         complement: null,
@@ -132,8 +129,7 @@ Ecole.find({}).remove()
         longitude:-0.215143,
         latitude:46.991300
     },{
-        id:4,
-        code:'0790552W',
+        _id:'0790552W',
         name: 'Groupe scolaire Anatole France',
         numero: 10,
         complement: null,
@@ -143,8 +139,7 @@ Ecole.find({}).remove()
         longitude: -0.209506,
         latitude:46.983434
     },{
-        id:5,
-        code:'0790473K',
+        _id:'0790473K',
         name: 'École publique \"Bonneval\"',
         numero: 21,
         complement: null,
@@ -154,8 +149,7 @@ Ecole.find({}).remove()
         longitude:-0.216464,
         latitude:46.962085
     },{
-        id:6,
-        code:'0790482V',
+        _id:'0790482V',
         name: 'École publique \"Arc-en-ciel\"',
         numero: 2,
         complement: null,
@@ -165,8 +159,7 @@ Ecole.find({}).remove()
         longitude:-0.119485,
         latitude:46.994438
     },{
-        id:7,
-        code:'0790346X',
+        _id:'0790346X',
         name: 'École Maurice Martinon',
         numero: 1,
         complement: null,

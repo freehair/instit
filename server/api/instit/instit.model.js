@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import mongoosePaginate from 'mongoose-paginate';
 
 var InstitSchema = new mongoose.Schema({
-    id:Number,
+    _id:Number,
     firstName: String,
     lastName: String,
     birthDate: Date

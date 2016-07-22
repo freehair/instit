@@ -11,7 +11,6 @@
 
 import _ from 'lodash';
 import Rattachement from './rattachement.model';
-import Ecole from '../ecole/ecole.model';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -64,16 +63,13 @@ function handleError(res, statusCode) {
 export function index(req, res) {
   //return Rattachement.find().exec()
   var query={};
-  var populate={};
+  var populate=null;
   if(req.query.ecole){
       query.ecole=req.query.ecole;
-      populate.path='instit';
-      populate.model=Ecole;
-      populate.key='id';
+      populate='instit';
   }else if (req.query.instit) {
       query.instit=req.query.instit;
-      populate.path='ecole';
-      populate.key='code';
+      populate='ecole';
   }
   console.log("query : ", query);
   console.log("populate : ", populate);

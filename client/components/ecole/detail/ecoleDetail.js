@@ -18,7 +18,7 @@
             if(id){
                 this.EcoleService.getListById().then(res => {
                     self.ecole=res.data;
-                    this.Rattachement.getBySchool(self.ecole.code).then(res => {
+                    this.Rattachement.getBySchool(self.ecole._id).then(res => {
                         self.rattachement=res.data;
                     })
 

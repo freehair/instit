@@ -4,8 +4,7 @@ import mongoose from 'mongoose';
 import mongoosePaginate from 'mongoose-paginate';
 
 var EcoleSchema = new mongoose.Schema({
-    id:Number,
-    code:String,
+    _id:String,
     name: String,
     numero:Number,
     complement:String,
