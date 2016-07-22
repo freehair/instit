@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+      <table class="table table-striped table-bordered">
+          <tr>
+              <th>Numero</th>
+              <th>Prénom</th>
+              <th>Nom</th>
+              <th>Date</th>
+          </tr>
+          <tr ng-repeat="instit in $ctrl.listInstits" ng-click="$ctrl.consult(instit)">
+              <td>{{instit.id}}</td>
+              <td>{{instit.firstName}}</td>
+              <td>{{instit.lastName}}</td>
+              <td>{{$ctrl.formatDate(instit.birthDate)}}</td>
+          </tr>
+      </table>
+  </div>
+  <ul uib-pagination total-items="$ctrl.total" ng-model="$ctrl.page" ng-change="$ctrl.pageChanged()" items-per-page="$ctrl.limit"></ul>
+</div>

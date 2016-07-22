@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+      <table class="table table-striped table-bordered">
+          <tr>
+              <th>Code</th>
+              <th>Nom</th>
+              <th>Adresse</th>
+              <th>Code Postal</th>
+              <th>Ville</th>
+          </tr>
+          <tr ng-repeat="ecole in $ctrl.listEcoles" ng-click="$ctrl.consult(ecole)">
+              <td>{{ecole.code}}</td>
+              <td>{{ecole.name}}</td>
+              <td>{{ecole.numero}} {{ecole.complement}} {{ecole.adresse}}</td>
+              <td>{{ecole.codePostal}}</td>
+              <td>{{ecole.ville}}</td>
+          </tr>
+      </table>
+  </div>
+  <ul uib-pagination total-items="$ctrl.total" ng-model="$ctrl.page" ng-change="$ctrl.pageChanged()" items-per-page="$ctrl.limit"></ul>
+</div>
