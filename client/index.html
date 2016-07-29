@@ -13,6 +13,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -58,6 +59,8 @@
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
       <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
       <script src="bower_components/moment/moment.js"></script>
+      <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+      <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js(.tmp) app/app.js -->
@@ -67,7 +70,9 @@
       <script src="components/auth/auth.module.js"></script>
       <script src="components/ecole/ecole.module.js"></script>
       <script src="components/instit/instit.module.js"></script>
+      <script src="components/planning/planning.module.js"></script>
       <script src="components/rattachement/rattachement.module.js"></script>
+      <script src="components/scolarite/scolarite.module.js"></script>
       <script src="components/util/util.module.js"></script>
       <script src="app/account/account.js"></script>
       <script src="app/account/login/login.controller.js"></script>
@@ -95,7 +100,11 @@
       <script src="components/mongoose-error/mongoose-error.directive.js"></script>
       <script src="components/navbar/navbar.controller.js"></script>
       <script src="components/navbar/navbar.directive.js"></script>
+      <script src="components/planning/planning.js"></script>
+      <script src="components/planning/planning.router.js"></script>
+      <script src="components/planning/planning.service.js"></script>
       <script src="components/rattachement/rattachement.service.js"></script>
+      <script src="components/scolarite/scolarite.service.js"></script>
       <script src="components/util/util.service.js"></script>
       <!-- endinjector -->
 

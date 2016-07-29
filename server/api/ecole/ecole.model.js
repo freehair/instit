@@ -12,7 +12,8 @@ var EcoleSchema = new mongoose.Schema({
     codePostal: Number,
     ville:String,
     longitude:Number,
-    latitude:Number
+    latitude:Number,
+    nbClasses:Number
 });
 
 EcoleSchema.plugin(mongoosePaginate);

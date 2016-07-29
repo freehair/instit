@@ -1,16 +1,16 @@
 /**
 * Using Rails-like standard naming convention for endpoints.
-* GET     /api/ecoles              ->  index
-* POST    /api/ecoles              ->  create
-* GET     /api/ecoles/:id          ->  show
-* PUT     /api/ecoles/:id          ->  update
-* DELETE  /api/ecoles/:id          ->  destroy
+* GET     /api/plannings              ->  index
+* POST    /api/plannings              ->  create
+* GET     /api/plannings/:id          ->  show
+* PUT     /api/plannings/:id          ->  update
+* DELETE  /api/plannings/:id          ->  destroy
 */
 
 'use strict';
 
 import _ from 'lodash';
-import Ecole from './ecole.model';
+import Planning from './planning.model';
 
 function respondWithResult(res, statusCode) {
     statusCode = statusCode || 200;
@@ -60,58 +60,50 @@ function handleError(res, statusCode) {
     };
 }
 
-// Gets a list of Ecoles
+// Gets a list of Plannings
 export function index(req, res) {
-    var paginateParams={};
     var query={};
-    if(parseInt(req.query.page)){
-        paginateParams.page=parseInt(req.query.page);
+    var populate=null;
+    if(req.query.ecole){
+        query.ecole=req.query.ecole;
+        populate='instit';
     }
-    if(parseInt(req.query.limit)){
-        paginateParams.limit=parseInt(req.query.limit);
-    }
-    /*if(req.query.search){
-        //query.ville={$regex:"./"+req.query.search+"/i"};
-        //query.ville= { "$contains":req.query.search};
-        query= { 'ville': { $regex: '/Th/'}};
-    }*/
-    console.log("query.ville : ", query);
-    return Ecole.paginate(query, paginateParams)
-    //return Ecole.find(query).exec()
+    return Planning.find(query).exec()
+    //return Planning.find(query).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Gets a single Ecole from the DB
+// Gets a single Planning from the DB
 export function show(req, res) {
-    return Ecole.findById(req.params.id).exec()
+    return Planning.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Creates a new Ecole in the DB
+// Creates a new Planning in the DB
 export function create(req, res) {
-    return Ecole.create(req.body)
+    return Planning.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
-// Updates an existing Ecole in the DB
+// Updates an existing Planning in the DB
 export function update(req, res) {
     if (req.body._id) {
         delete req.body._id;
     }
-    return Ecole.findById(req.params.id).exec()
+    return Planning.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(saveUpdates(req.body))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Deletes a Ecole from the DB
+// Deletes a Planning from the DB
 export function destroy(req, res) {
-    return Ecole.findById(req.params.id).exec()
+    return Planning.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
     .catch(handleError(res));

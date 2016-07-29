@@ -6,7 +6,7 @@ import Ecole from '../ecole/ecole.model';
 import Instit from '../instit/instit.model';
 
 var RattachementSchema = new mongoose.Schema({
-    id:Number,
+    _id:Number,
     ecole:{ type: String, ref: 'Ecole'},
     instit:{ type:Number, ref: 'Instit'}
 });

@@ -29,6 +29,15 @@
                 });
             },
 
+            getListTypehead(val){
+                return $http.get('/api/ecole?search='+val).then(res => {
+                    return $q.resolve(res);
+                })
+                .catch(err => {
+                    return $q.reject(err.data);
+                });
+            },
+
             setEcoleId(id){
                 this.ecoleId=id;
             },

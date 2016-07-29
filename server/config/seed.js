@@ -9,6 +9,7 @@ import User from '../api/user/user.model';
 import Instit from '../api/instit/instit.model';
 import Ecole from '../api/ecole/ecole.model';
 import Rattachement from '../api/rattachement/rattachement.model';
+import Planning from '../api/planning/planning.model';
 
 var moment = require('moment');
 
@@ -107,7 +108,8 @@ Ecole.find({}).remove()
         codePostal: 79270,
         ville:'Sansais',
         longitude: -0.5864199999999755,
-        latitude: 46.274812
+        latitude: 46.274812,
+        nbClasses:4
     },{
         _id:'0790551V',
         name: 'Elémentaire Ferdinand-Buisson',
@@ -117,7 +119,8 @@ Ecole.find({}).remove()
         codePostal: 79100,
         ville:'Thouars',
         longitude:  -0.211499,
-        latitude: 46.976762
+        latitude: 46.976762,
+        nbClasses:5
     },{
         _id:'0790548S',
         name: 'Groupe scolaire Paul-Bert',
@@ -127,7 +130,8 @@ Ecole.find({}).remove()
         codePostal: 79100,
         ville:'Thouars',
         longitude:-0.215143,
-        latitude:46.991300
+        latitude:46.991300,
+        nbClasses:4
     },{
         _id:'0790552W',
         name: 'Groupe scolaire Anatole France',
@@ -137,7 +141,8 @@ Ecole.find({}).remove()
         codePostal: 79100,
         ville:'Thouars',
         longitude: -0.209506,
-        latitude:46.983434
+        latitude:46.983434,
+        nbClasses:3
     },{
         _id:'0790473K',
         name: 'École publique \"Bonneval\"',
@@ -147,7 +152,8 @@ Ecole.find({}).remove()
         codePostal: 79100,
         ville:'Saint-Jean de Thouars',
         longitude:-0.216464,
-        latitude:46.962085
+        latitude:46.962085,
+        nbClasses:5
     },{
         _id:'0790482V',
         name: 'École publique \"Arc-en-ciel\"',
@@ -157,7 +163,8 @@ Ecole.find({}).remove()
         codePostal: 79100,
         ville:'Saint-Léger de Montbrun',
         longitude:-0.119485,
-        latitude:46.994438
+        latitude:46.994438,
+        nbClasses:2
     },{
         _id:'0790346X',
         name: 'École Maurice Martinon',
@@ -167,7 +174,8 @@ Ecole.find({}).remove()
         codePostal: 79100,
         ville:'Sainte-Verge',
         longitude:-0.210522,
-        latitude:47.007516
+        latitude:47.007516,
+        nbClasses:4
     })
     .then(() => {
         console.log('finished populating ecole');
@@ -178,9 +186,33 @@ Ecole.find({}).remove()
 Rattachement.find({}).remove()
 .then(() => {
     Rattachement.create({
-        id:1,
+        _id:1,
         ecole:"0790551V",
         instit:1
+    })
+    .then(() => {
+        console.log('finished populating rattachement');
+    });
+});
+
+Planning.find({}).remove()
+.then(() => {
+    Planning.create({
+        _id:1,
+        ecole:"0790551V",
+        instit:1,
+        classe:"CP",
+        dateDebut:null,
+        dateFin:null,
+        titulaire:true
+    },{
+        _id:2,
+        ecole:"0790551V",
+        instit:1,
+        classe:"CP",
+        dateDebut: new Date(moment('25/07/16',"DD/MM/YY")),
+        dateFin:new Date(moment('29/07/16',"DD/MM/YY")),
+        titulaire:false
     })
     .then(() => {
         console.log('finished populating rattachement');

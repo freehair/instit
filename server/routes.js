@@ -14,6 +14,8 @@ export default function(app) {
   app.use('/api/instit', require('./api/instit'));
   app.use('/api/ecole', require('./api/ecole'));
   app.use('/api/rattachement', require('./api/rattachement'));
+  app.use('/api/planning', require('./api/planning'));
+   app.use('/api/scolarite', require('./api/scolarite'));
 
   app.use('/auth', require('./auth').default);
 

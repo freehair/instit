@@ -7,12 +7,15 @@ angular.module('institApp', [
     'institApp.constants',
     'institApp.instit',
     'institApp.ecole',
+    'institApp.planning',
+    'institApp.scolarite',
     'ngCookies',
     'ngResource',
     'ngSanitize',
     'ui.router',
     'ui.bootstrap',
-    'validation.match'
+    'validation.match',
+    'ui.calendar'
   ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');

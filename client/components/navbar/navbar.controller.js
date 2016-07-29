@@ -11,6 +11,9 @@ class NavbarController {
     },{
         'title': 'Ecole',
         'state': 'ecole'
+    },{
+        'title': 'Planning',
+        'state': 'planning'
     } ];
 
     isCollapsed = true;
